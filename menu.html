@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Menu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .container-fluid{
+        background-color: #E1DCC9;
+        color: #50462E;
+        font-size: 20px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        padding: 10px;
+    }
+
+    .navbar {
+        font-size: 100px; 
+    }
+
+    .navbar-nav .nav-link {
+        line-height: 300px; 
+    }
+
+    .navbar-brand {
+        font-size: 40px;
+        line-height: 200px; 
+        display: flex;
+        align-items: center;
+        font-size: 40px; 
+    }
+
+    .navbar-brand .logo {
+        height: 150px; 
+        margin-right: 10px; 
+    }
+
+    .navbar-brand span {
+        font-size: 40px; 
+    }
+    .d-flex {
+        display: flex;
+    }
+
+    .d-flex .form-control {
+        color: #50462E; 
+    }
+
+    .d-flex .btn-outline-success {
+        color: #50462E; 
+        border-color: #50462E; 
+    }
+
+    .d-flex .btn-outline-success:hover {
+        background-color: #50462E; 
+        border-color: #E1DCC9; 
+        color: #E1DCC9; 
+    }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        .menu-item {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .menu-item img {
+            /* width: 100%;
+            border-radius: 5px; */
+            width: 300px; 
+            height: 300px; 
+            border-radius: 5px; 
+            object-fit: cover;
+        }
+        .menu-item h3 {
+            font-size: 1.5rem;
+        }
+        .menu-item p {
+            font-size: 1rem;
+        }
+        .btn-add-to-cart {
+            background-color: #50462E;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .btn-add-to-cart:hover {
+            background-color: #50462E;
+        }
+    </style>
+</head>
+<header>
+   
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="Cafe_isle_logo.png" alt="Logo" class="logo">
+                <span>CAFE ISLE</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class ="nav-item">
+                <a class="nav-link" href="menu.html">Menu</a>
+              </li>
+
+              <li class ="nav-item">
+                <a class="nav-link" href="order.html">Order</a>
+              </li>
+
+              <li class ="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+              </ul>
+              
+            <form class="d-flex ms-auto" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+</header>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Cafe Menu</h1>
+        <div class="row">
+            <!-- Menu Item 1 -->
+            <div class="col-md-4">
+                <div class="menu-item">
+                    <img src="croissant.jpg" alt="Croissant">
+                    <center><h3>Walnut Croissant</h3>
+                    <h5>Rs.200</h5>
+                    <p>Flaky and buttery, this classic French pastry is perfect for breakfast or a light snack.</p>
+                    <button class="btn-add-to-cart" onclick="addToCart('Croissant')">Add to Cart</button></center>
+                </div>
+            </div>
+            <!-- Menu Item 2 -->
+            <div class="col-md-4">
+                <div class="menu-item">
+                    <img src="blueberry_cheesecake.jpg" alt="Blueberry Cheesecake">
+                    <center><h3>Blueberry Cheesecake</h3>
+                    <h5>Rs.300</h5>
+                    <p>A creamy, tangy cheesecake topped with luscious blueberry compote for a perfect blend of sweetness and tartness.</p>
+                    <button class="btn-add-to-cart" onclick="addToCart('Blueberry Cheesecake')">Add to Cart</button></center>
+                </div>
+            </div>
+            <!-- Menu Item 3 -->
+            <div class="col-md-4">
+                <div class="menu-item">
+                    <img src="shanghai.jpg" alt="Shanghai Cupcakes">
+                    <center><h3>Shanghai Cupcakes</h3>
+                    <h5>Rs.250</h5>
+                    <p>Delight in our moist, fluffy cupcakes infused with exotic Shanghai flavors for a unique treat.</p>
+                    <button class="btn-add-to-cart" onclick="addToCart('Shanghai Cupcakes')">Add to Cart</button></center>
+                </div>
+            
+            </div>
+            <!-- Add more menu items as needed -->
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="macarons.jpg" alt="Macarons Lemon Pastry">
+                <center><h3>Macarons Lemon Pastry</h3>
+                <h5>Rs.200</h5>
+                <p>Enjoy the zesty delight of our freshly baked lemon macarons pastry.</p>
+                <button class="btn-add-to-cart" onclick="addToCart('Macarons Lemon Pastry')">Add to Cart</button></center>
+            </div>
+        </div>
+
+            <!-- Add more menu items as needed -->
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="pizzarolls.jpg" alt="Pizza Rolls">
+                <center><h3>Pizza Rolls</h3>
+                <h5>Rs.150</h5>
+                <p>Indulge in a savory delight with our cheesy, tomato-filled pizza rolls.</p>
+                <button class="btn-add-to-cart" onclick="addToCart('Pizza Rolls')">Add to Cart</button></center>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="lasagna.jpg" alt="Lasagna">
+                <center><h3>Lasagna</h3>
+                <h5>Rs.350</h5>
+                <p>Layers of pasta, rich meat sauce, and creamy béchamel baked to perfection.</p>
+                <button class="btn-add-to-cart" onclick="addToCart('Lasagna')">Add to Cart</button></center>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="greeksalad.jpg" alt="Greek Salad">
+                <center><h3>Greek Salad</h3>
+                <h5>Rs.200</h5>
+                <p>Fresh tomatoes, cucumbers, olives, and feta cheese tossed with olive oil and herbs. </p>
+                <button class="btn-add-to-cart" onclick="addToCart('Greek Salad')">Add to Cart</button></center>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="FrozenYogurtBowl.jpg" alt="Frozen Yogurt Bowl">
+                <center><h3>Frozen Yogurt Bowl</h3>
+                <h5>Rs.200</h5>
+                <p>Creamy frozen yogurt topped with fresh fruits, nuts, and honey.</p>
+                <button class="btn-add-to-cart" onclick="addToCart('Frozen Yogurt Bowl')">Add to Cart</button></center>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="PizzaCapricciosa.jpg" alt="Pizza Capricciosa">
+                <center><h3>Pizza Capricciosa</h3>
+                <h5>Rs.400</h5>
+                <p>Classic Italian pizza topped with ham, mushrooms, artichokes, and olives.</p>
+                <button class="btn-add-to-cart" onclick="addToCart('Pizza Capricciosa')">Add to Cart</button></center>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="frappe.jpg" alt="Frappuccino">
+                <center><h3>Frappuccino</h3>
+                <h5>Rs.350</h5>
+                <p>Chilled, creamy blend of coffee or tea, topped with whipped cream and a drizzle of syrup.</p>
+                <button class="btn-add-to-cart" onclick="addToCart('Frappuccino')">Add to Cart</button></center>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="VirginPinaColada.jpg" alt="Virgin Pina Colada">
+                <center><h3>Virgin Pina Colada</h3>
+                <h5>Rs.280</h5>
+                <p>A tropical blend of pineapple and coconut cream, served over ice with a splash of freshness.</p>
+                <button class="btn-add-to-cart" onclick="addToCart('Virgin Pina Colada')">Add to Cart</button></center>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="espresso.jpg" alt="Espresso">
+                <center><h3>Espresso</h3>
+                <h5>Rs.150</h5>
+                <p>A strong and bold coffee shot to kickstart your day.</p>
+                <button class="btn-add-to-cart" onclick="addToCart('Espresso')">Add to Cart</button></center>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="machalatte.jpg" alt="Matcha Latte">
+                <center><h3>Matcha Latte</h3>
+                <h5>Rs.250</h5>
+                <p>Japanese matcha blended with steamed milk for a vibrant green tea experience.</p>
+                <button class="btn-add-to-cart" onclick="addToCart('Matcha Latte')">Add to Cart</button></center>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="coldbrew.jpg" alt="Cold Brew">
+                <center><h3>Cold Brew</h3>
+                <h5>Rs.230</h5>
+                <p>Smooth and mellow coffee brewed cold for 12 hours.</p>
+                <button class="btn-add-to-cart" onclick="addToCart('Cold Brew')">Add to Cart</button></center>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="americano.jpg" alt="Americano">
+                <center><h3>Americano</h3>
+                <h5>Rs.180</h5>
+                <p>Espresso diluted with hot water for a lighter, yet rich flavor.</p>
+                <button class="btn-add-to-cart" onclick="addToCart('Americano')">Add to Cart</button></center>
+            </div>
+        </div>
+    </div>
+     
+    <script>
+        function addToCart(item) {
+            alert(item + ' has been added to your cart!');
+        }
+    </script>
+</body>
+</html>
